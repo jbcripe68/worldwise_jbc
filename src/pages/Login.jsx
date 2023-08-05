@@ -19,12 +19,12 @@ export default function Login() {
     }
   }, [isAuthenticated, navigate]);
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
     if (!email || !password) return;
 
-    if (!login(email, password)) {
+    if (!(await login(email, password))) {
       alert("Login failed, please try again");
     }
   }
