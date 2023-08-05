@@ -1,0 +1,88 @@
+{
+  "cities": [
+    {
+      "cityName": "Lisbon",
+      "country": "Portugal",
+      "emoji": "🇵🇹",
+      "date": "2027-10-31T15:59:59.138Z",
+      "notes": "My favorite city so far!",
+      "position": {
+        "lat": 38.727881642324164,
+        "lng": -9.140900099907554
+      },
+      "id": 73930385
+    },
+    {
+      "cityName": "Madrid",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2027-07-15T08:22:53.976Z",
+      "notes": "",
+      "position": {
+        "lat": 40.46635901755316,
+        "lng": -3.7133789062500004
+      },
+      "id": 17806751
+    },
+    {
+      "cityName": "Home",
+      "country": "United States of America (the)",
+      "emoji": "🇺🇸",
+      "date": "2023-08-03T03:29:03.474Z",
+      "notes": "No place like it",
+      "position": {
+        "lat": "26.517820098754733",
+        "lng": "-80.14470577239992"
+      },
+      "id": 1691033377397
+    },
+    {
+      "cityName": "Neighbor Millie",
+      "country": "United States of America (the)",
+      "emoji": "🇺🇸",
+      "date": "2023-08-03T03:40:00.153Z",
+      "notes": "From Peru",
+      "position": {
+        "lat": "26.51743129345202",
+        "lng": "-80.1447379589081"
+      },
+      "id": 1691034013980
+    },
+    {
+      "cityName": "Munich",
+      "country": "Germany",
+      "emoji": "🇩🇪",
+      "date": "2005-08-03T18:31:13.000Z",
+      "notes": "many beers ago...",
+      "position": {
+        "lat": "48.14776316994868",
+        "lng": "11.648254394531252"
+      },
+      "id": 1691087504796
+    },
+    {
+      "cityName": "Cordoba",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2023-08-04T01:42:17.102Z",
+      "notes": "test",
+      "position": {
+        "lat": "37.73596920859053",
+        "lng": "-4.877929687500001"
+      },
+      "id": 1691113342978
+    },
+    {
+      "cityName": "Tamest",
+      "country": "Algeria",
+      "emoji": "🇩🇿",
+      "date": "2023-08-04T01:44:38.422Z",
+      "notes": "whatever",
+      "position": {
+        "lat": "27.371767300523047",
+        "lng": "-2.0654296875000004"
+      },
+      "id": 1691113486519
+    }
+  ]
+}

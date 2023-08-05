@@ -1,0 +1,86 @@
+curl 'https://realm.mongodb.com/api/client/v2.0/app/jbc_realmapp-mdkcq/auth/providers/local-userpass/login' \
+-H 'Content-Type: application/json' \
+--data-raw '{
+  "username": "someone@example.com",
+  "password": "Pa55w0rd"
+}'
+
+
+// refresh token
+ACT=$(curl -X POST 'https://realm.mongodb.com/api/client/v2.0/auth/session' \
+-H 'Content-Type: application/json' \
+-H "Authorization: Bearer $RFT" | jq .access_token | sed  's/\"//g')
+
+// find all
+curl 'https://data.mongodb-api.com/app/jbc_realmapp-mdkcq/endpoint/data/v1/action/find' \
+ -H 'Content-Type: application/json' \
+ -H "Authorization: Bearer $ACT" \
+ --data-raw '{
+  "dataSource": "mongodb-atlas",
+  "database": "worldwide",
+  "collection": "cities",
+  "filter": {
+  }
+ }' | jq .
+
+
+// find first
+curl 'https://data.mongodb-api.com/app/jbc_realmapp-mdkcq/endpoint/data/v1/action/findOne' \
+ -H 'Content-Type: application/json' \
+ -H "Authorization: Bearer $ACT" \
+ --data-raw '{
+  "dataSource": "mongodb-atlas",
+  "database": "worldwide",
+  "collection": "cities",
+  "filter": {
+  }
+ }' | jq .
+
+
+// find by id
+curl 'https://data.mongodb-api.com/app/jbc_realmapp-mdkcq/endpoint/data/v1/action/findOne' \
+ -H 'Content-Type: application/json' \
+ -H "Authorization: Bearer $ACT" \
+ --data-raw '{
+  "dataSource": "mongodb-atlas",
+  "database": "worldwide",
+  "collection": "cities",
+  "filter": {
+    "_id": { "$oid": "64cd3fe80fad7f76cccb8d05" }
+  }
+ }'
+
+
+// delete by id
+curl -X POST 'https://data.mongodb-api.com/app/jbc_realmapp-mdkcq/endpoint/data/v1/action/deleteOne' \
+ -H 'Content-Type: application/json' \
+ -H "Authorization: Bearer $ACT" \
+ --data-raw '{
+  "dataSource": "mongodb-atlas",
+  "database": "worldwide",
+  "collection": "cities",
+  "filter": {
+    "_id": { "$oid": "64cd3fe80fad7f76cccb8d05" }
+  }
+ }'
+
+// insertOne
+curl -X POST 'https://data.mongodb-api.com/app/jbc_realmapp-mdkcq/endpoint/data/v1/action/insertOne' \
+ -H 'Content-Type: application/json' \
+ -H "Authorization: Bearer $ACT" \
+ --data-raw '{
+  "dataSource": "mongodb-atlas",
+  "database": "worldwide",
+  "collection": "cities",
+  "document": {
+    "cityName": "Madrid",
+    "country": "Spain",
+    "emoji": "🇪🇸",
+    "date": "2027-07-15T08:22:53.976Z",
+    "notes": "",
+    "position": {
+      "lat": 40.46635901755316,
+      "lng": -3.7133789062500004
+    }
+  }
+ }'
