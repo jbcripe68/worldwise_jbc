@@ -30,7 +30,7 @@ function City() {
 
   useEffect(() => {
     getCity(cityId);
-  }, [cityId]);
+  }, [cityId, getCity]);
 
   if (isLoading) return <Spinner />;
   if (!currentCity?.cityName) return <div>No city</div>;
